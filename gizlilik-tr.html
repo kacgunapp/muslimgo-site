@@ -35,8 +35,8 @@
   <li>Konum (GPS, Wi-Fi, IP'den konum), kişiler, fotoğraf, mikrofon ve reklam kimliği (IDFA) toplamayız.</li>
   <li>Reklam SDK'sı ve izleyici yok. Verini satmayız. Seni uygulamalar ve siteler arasında izlemeyiz; bu yüzden izleme izni (ATT) istemeyiz.</li>
   <li>İlerlemen ve ayarların cihazında durur.</li>
-  <li>Lig ve Arkadaşlar için sunucu bağlantısı (Supabase, Avrupa Birliği) isteğe bağlıdır ve bu politikanın yürürlük tarihinde uygulamaya bağlı değildir. Bağlı değilken sunucuya hiçbir veri gitmez. Bağlı olan bir sürümde bu ekranları açarsan takma adın ve ilerleme yedeğin anonim bir hesapla gider; bu veriyi istediğin an silebilirsin (Bölüm 4).</li>
-  <li>Kimliksiz kullanım istatistiği (PostHog, Avrupa Birliği) yalnız uygulama sürümünde etkinse çalışır. Etkinse varsayılan olarak açıktır; Arkadaşlar → Gizlilik'ten kapatabilirsin (Bölüm 5).</li>
+  <li>Lig ve Arkadaşlar için sunucu bağlantısı (Supabase, Avrupa Birliği) isteğe bağlıdır ve bu politikanın yürürlük tarihinde uygulamada kapalıdır. Kapalıyken sunucuya hiçbir veri gitmez. Açık olduğu bir sürümde bu ekranları açarsan takma adın ve ilerleme yedeğin anonim bir hesapla gider; bu veriyi istediğin an silebilirsin (Bölüm 4).</li>
+  <li>Kimliksiz kullanım istatistiği (PostHog, Avrupa Birliği) yalnız Lig ve Arkadaşlar'daki birkaç işlemi sayar; bu yüzden sunucu bağlantısı kapalıyken hiçbir olay gönderilmez. Uygulama sürümünde etkinse varsayılan olarak açıktır; Arkadaşlar → Gizlilik'ten kapatabilirsin (Bölüm 5).</li>
   <li>Uygulama içi satın alma açık olduğunda ödemeyi Apple işler. Satın almayı doğrulamak için RevenueCat kullanılır (Bölüm 6).</li>
 </ul>
 
@@ -57,7 +57,7 @@
 <p>Hatırlatmaları açarsan iOS bildirim izni istenir. Bildirimler cihazında planlanır ve gösterilir. Sunucudan bildirim (push) göndermeyiz ve bildirim belirteci almayız. Sessiz saatler ve namaz vakitleri de cihazında hesaplanır.</p>
 
 <h2 id="sunucu">4. Lig ve Arkadaşlar: isteğe bağlı anonim hesap (Supabase)</h2>
-<p><strong>Bağlantı durumu:</strong> Bu politikanın yürürlük tarihinde sunucu bağlantısı uygulamaya bağlı değildir. Bu durumda Lig ve Arkadaşlar ekranı sunucunun kapalı olduğunu gösterir, anonim hesap oluşturulmaz ve bu bölümdeki verilerin hiçbiri gönderilmez. Bu bölümün geri kalanı yalnız bağlantının açık olduğu bir sürümde geçerlidir.</p>
+<p><strong>Bağlantı durumu:</strong> Bu politikanın yürürlük tarihinde sunucu bağlantısı uygulamada kapalıdır. Bu durumda Lig ve Arkadaşlar ekranı sunucunun kapalı olduğunu gösterir, anonim hesap oluşturulmaz ve bu bölümdeki verilerin hiçbiri gönderilmez. Bu bölümün geri kalanı yalnız bağlantının açık olduğu bir sürümde geçerlidir.</p>
 <p>Lig ya da Arkadaşlar ekranını ilk açtığında Supabase'de rastgele bir kimlikle anonim bir hesap oluşturulur. Bu hesapta e-posta, telefon ya da şifre yoktur. Bu ekranları hiç açmazsan sunucuda verin oluşmaz.</p>
 <p>Bu hesapla şu veriler sunucuya gider:</p>
 <ul>
@@ -74,14 +74,15 @@
 
 <h2 id="istatistik">5. Kimliksiz kullanım istatistiği (PostHog)</h2>
 <p>Lig ve arkadaş özelliklerinin nasıl kullanıldığını anlamak için birkaç işlemin adsız sayımı gönderilir. Bu yalnız uygulama sürümünde PostHog bağlantısı etkinse çalışır; etkin değilse hiçbir olay gönderilmez ve aşağıdaki anahtar görünmez. Etkinse varsayılan olarak açıktır. Arkadaşlar → Gizlilik → "Kimliksiz kullanım istatistiği" anahtarıyla kapatabilirsin. Kapatınca cihazındaki kurulum kimliği silinir ve yeni olay gönderilmez. Yeniden açarsan yeni bir kimlik üretilir.</p>
+<p>Olayların hepsi Lig ve Arkadaşlar'daki sunucu işlemlerinden sonra oluşur: lig tablosu yüklendiğinde, takma adın kaydedildiğinde, arkadaşlık isteği gönderildiğinde ya da kabul edildiğinde. Sunucu bağlantısı kapalıyken (Bölüm 4) hiçbir olay oluşmaz ve PostHog'a istek gitmez.</p>
 <p><strong>Ne gider:</strong></p>
 <ul>
   <li>Olayın adı ve zamanı. Gönderilen olaylar yalnız şunlardır: lig tablosunun açılması, takma adın kaydedilmesi, arkadaşlık isteğinin gönderilmesi, arkadaşlık isteğinin kabulü.</li>
   <li>Rastgele bir kurulum kimliği. Hesabınla, cihaz kimliğinle ya da Supabase kimliğinle bağlanmaz.</li>
   <li>Yalnız şu ayrıntılar: lig grubundaki kişi sayısı ve arkadaşlık isteğinin sonucu. Ders ilerlemen, XP'n ve cevapların gönderilmez.</li>
 </ul>
-<p>Dinî metin, verdiğin cevaplar ve yazdığın metinler gönderilmez. Olaylara IP adresi eklenmez, konum çıkarımı kapalıdır ve kişi profili oluşturulmaz. Bağlantı sırasında IP adresin teknik olarak PostHog'a ulaşır. Otomatik ekran yakalama, oturum kaydı ve dokunma takibi yoktur.</p>
-<p><strong>Nerede:</strong> PostHog'un Avrupa Birliği bulutu (Frankfurt). <strong>Ne kadar süre:</strong> PostHog projesinin saklama süresi boyunca. Olaylar bir kişiye bağlanamadığı için tek tek ayıklanamaz.</p>
+<p>Dinî metin, verdiğin cevaplar ve yazdığın metinler gönderilmez. Olaylara IP adresi eklenmez, konum çıkarımı kapalıdır ve kişi profili oluşturulmaz. Bağlantı sırasında IP adresin teknik olarak PostHog'a ulaşır; MuslimGo'nun PostHog projesinde IP anonimleştirme açık olduğundan olaylarla birlikte saklanmaz. Otomatik ekran yakalama, oturum kaydı ve dokunma takibi yoktur.</p>
+<p><strong>Nerede:</strong> PostHog'un Avrupa Birliği bulutu (Frankfurt). <strong>Ne kadar süre:</strong> 1 yıl (PostHog'un kullandığımız ücretsiz planındaki saklama süresi). PostHog süresi dolan olayları hemen değil, düzenli temizliklerinde siler. Olaylar bir kişiye bağlanamadığı için tek tek ayıklanamaz.</p>
 
 <h2 id="satin-alma">6. Satın almalar (Apple ve RevenueCat)</h2>
 <p>Uygulama içi satın almalar (abonelikler ve oyun parası paketleri) açık olduğunda geçerlidir. Bu politikanın yürürlük tarihinde satın almalar uygulamada kapalıdır. Satın almaların kapalı olduğu sürümde RevenueCat hiç başlatılmaz ve ağ isteği yapılmaz.</p>
@@ -110,7 +111,7 @@
   <tr><th>Veri</th><th>Süre</th></tr>
   <tr><td>Cihazındaki veriler</td><td>Uygulamayı silene kadar. Aile işaretleri 56 gün; satın alma aktarım bayrağı 7 gün.</td></tr>
   <tr><td>Supabase'deki anonim hesap ve verileri</td><td>Sen silene kadar.</td></tr>
-  <tr><td>Kimliksiz olaylar (PostHog)</td><td>PostHog projesinin saklama süresi boyunca. Kurulum kimliği, istatistiği kapatınca cihazdan silinir.</td></tr>
+  <tr><td>Kimliksiz olaylar (PostHog)</td><td>1 yıl; süresi dolan olaylar PostHog'un düzenli temizliğinde silinir. Kurulum kimliği, istatistiği kapatınca cihazdan silinir.</td></tr>
   <tr><td>Satın alma kayıtları (Apple, RevenueCat)</td><td>Apple'ın ve RevenueCat'in politikalarına göre.</td></tr>
 </table>
 
@@ -124,7 +125,7 @@
 <p>Uygulamanın veri işleyişi değişirse bu politikayı değişiklikle birlikte güncelleriz ve yürürlük tarihini değiştiririz.</p>
 
 <h2 id="iletisim">15. İletişim</h2>
-<p>Sorular, haklarınla ilgili talepler ve silme istekleri için: <a href="mailto:dogac@teknikaotomasyon.com">dogac@teknikaotomasyon.com</a>. MuslimGo'yu Doğaç Turan geliştirir.</p>
+<p>Sorular, haklarınla ilgili talepler ve silme istekleri için: <a href="mailto:dogac@teknikaotomasyon.com">dogac@teknikaotomasyon.com</a>. Veri sorumlusu, MuslimGo'nun geliştiricisi Doğaç Turan'dır.</p>
 
 <h2 id="ek">Ek: Veri alanları (teknik adlar)</h2>
 <p>Yukarıdaki maddelerin uygulamadaki karşılıkları:</p>

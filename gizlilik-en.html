@@ -35,8 +35,8 @@
   <li>We do not collect location (GPS, Wi-Fi, location from IP), contacts, photos, microphone data or the advertising identifier (IDFA).</li>
   <li>There are no advertising SDKs and no trackers. We do not sell your data. We do not track you across apps or websites, so we never ask for tracking permission (ATT).</li>
   <li>Your progress and settings stay on your device.</li>
-  <li>The server connection for Leagues (Lig) and Friends (Arkadaşlar) (Supabase, European Union) is optional and, on this policy's effective date, is not connected to the app. While it is not connected, no data goes to a server. In a version where it is connected, opening these screens sends your nickname and a progress backup under an anonymous account; you can delete this data at any time (section 4).</li>
-  <li>Anonymous usage statistics (PostHog, European Union) work only if they are enabled in the app version. If enabled, they are on by default; you can turn them off in Friends (Arkadaşlar) → Privacy (Gizlilik) (section 5).</li>
+  <li>The server connection for Leagues (Lig) and Friends (Arkadaşlar) (Supabase, European Union) is optional and, on this policy's effective date, is off in the app. While it is off, no data goes to a server. In a version where it is on, opening these screens sends your nickname and a progress backup under an anonymous account; you can delete this data at any time (section 4).</li>
+  <li>Anonymous usage statistics (PostHog, European Union) only count a few actions in Leagues and Friends, so no events are sent while the server connection is off. If they are enabled in the app version, they are on by default; you can turn them off in Friends (Arkadaşlar) → Privacy (Gizlilik) (section 5).</li>
   <li>When in-app purchases are available, Apple processes the payment and RevenueCat is used to verify purchases (section 6).</li>
 </ul>
 
@@ -57,7 +57,7 @@
 <p>If you turn on reminders, iOS asks for notification permission. Notifications are scheduled and shown on your device. We do not send push notifications from a server and we do not collect a push token. Quiet hours and prayer times are also calculated on your device.</p>
 
 <h2 id="sunucu">4. Leagues and Friends: optional anonymous account (Supabase)</h2>
-<p><strong>Connection status:</strong> On this policy's effective date, the server connection is not connected to the app. In that case the Leagues and Friends screen shows that the server is off, no anonymous account is created and none of the data in this section is sent. The rest of this section applies only to a version in which the connection is on.</p>
+<p><strong>Connection status:</strong> On this policy's effective date, the server connection is off in the app. In that case the Leagues and Friends screen shows that the server is off, no anonymous account is created and none of the data in this section is sent. The rest of this section applies only to a version in which the connection is on.</p>
 <p>The first time you open the Leagues or Friends screen, an anonymous account with a random ID is created on Supabase. It has no email address, phone number or password. If you never open these screens, no data about you is created on the server.</p>
 <p>With this account, the following data is sent to the server:</p>
 <ul>
@@ -74,14 +74,15 @@
 
 <h2 id="istatistik">5. Anonymous usage statistics (PostHog)</h2>
 <p>To understand how the league and friend features are used, anonymous counts of a few actions are sent. This works only if the PostHog connection is enabled in the app version; if it is not, no events are sent and the switch below is not shown. If enabled, it is on by default. You can turn it off with the "Anonymous usage statistics" ("Kimliksiz kullanım istatistiği") switch in Friends (Arkadaşlar) → Privacy (Gizlilik). When you turn it off, the installation ID on your device is deleted and no new events are sent. If you turn it back on, a new ID is created.</p>
+<p>All events happen only after a server action in Leagues or Friends: when the league table loads, when your nickname is saved, or when a friend request is sent or accepted. While the server connection is off (section 4), no events are created and no request goes to PostHog.</p>
 <p><strong>What is sent:</strong></p>
 <ul>
   <li>The event name and time. The only events sent are: league table opened, nickname saved, friend request sent, friend request accepted.</li>
   <li>A random installation ID. It is not linked to an account, to your device identifier or to your Supabase ID.</li>
   <li>Only these details: the number of people in the league group and the result of a friend request. Your lesson progress, XP and answers are not sent.</li>
 </ul>
-<p>Religious texts, your answers and anything you type are never sent. No IP address is added to events, location lookup is disabled and no person profile is created. When you connect, your IP address technically reaches PostHog. There is no automatic screen capture, session recording or tap tracking.</p>
-<p><strong>Where:</strong> PostHog's European Union cloud (Frankfurt). <strong>How long:</strong> For the retention period of the PostHog project. Because events cannot be linked to a person, they cannot be removed one by one.</p>
+<p>Religious texts, your answers and anything you type are never sent. No IP address is added to events, location lookup is disabled and no person profile is created. When you connect, your IP address technically reaches PostHog; IP anonymisation is turned on in MuslimGo's PostHog project, so it is not stored with events. There is no automatic screen capture, session recording or tap tracking.</p>
+<p><strong>Where:</strong> PostHog's European Union cloud (Frankfurt). <strong>How long:</strong> 1 year (the retention period of the free PostHog plan we use). PostHog deletes expired events in its regular clean-ups, not immediately. Because events cannot be linked to a person, they cannot be removed one by one.</p>
 
 <h2 id="satin-alma">6. Purchases (Apple and RevenueCat)</h2>
 <p>This applies when in-app purchases (subscriptions and coin packs) are available. On this policy's effective date, purchases are off in the app. In a version where purchases are off, RevenueCat is never started and makes no network requests.</p>
@@ -110,7 +111,7 @@
   <tr><th>Data</th><th>Retention</th></tr>
   <tr><td>Data on your device</td><td>Until you delete the app. Family marks 56 days; purchase relay flag 7 days.</td></tr>
   <tr><td>Anonymous Supabase account and its data</td><td>Until you delete it.</td></tr>
-  <tr><td>Anonymous events (PostHog)</td><td>For the retention period of the PostHog project. The installation ID is deleted from your device when you turn statistics off.</td></tr>
+  <tr><td>Anonymous events (PostHog)</td><td>1 year; expired events are deleted in PostHog's regular clean-up. The installation ID is deleted from your device when you turn statistics off.</td></tr>
   <tr><td>Purchase records (Apple, RevenueCat)</td><td>Under Apple's and RevenueCat's policies.</td></tr>
 </table>
 
@@ -124,7 +125,7 @@
 <p>If the way the app handles data changes, we update this policy together with the change and update the effective date.</p>
 
 <h2 id="iletisim">15. Contact</h2>
-<p>Questions, requests about your rights and deletion requests: <a href="mailto:dogac@teknikaotomasyon.com">dogac@teknikaotomasyon.com</a>. MuslimGo is developed by Doğaç Turan.</p>
+<p>Questions, requests about your rights and deletion requests: <a href="mailto:dogac@teknikaotomasyon.com">dogac@teknikaotomasyon.com</a>. The data controller is Doğaç Turan, the developer of MuslimGo.</p>
 
 <h2 id="ek">Appendix: Data fields (technical names)</h2>
 <p>How the sections above map to the app:</p>
