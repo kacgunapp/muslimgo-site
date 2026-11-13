@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MuslimGo Gizlilik Politikası</title>
+<meta name="description" content="MuslimGo uygulamasının hangi veriyi nerede işlediği: cihazda kalanlar, isteğe bağlı anonim yedek, kimliksiz kullanım istatistiği ve satın almalar.">
+<link rel="alternate" hreflang="en" href="gizlilik-en.html">
+<style>
+  :root { --zemin: #FFF8EC; --metin: #1B1F24; --ikincil: #57606B; --marka: #06594E; --cizgi: #F3E7D0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--zemin); color: var(--metin); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 20px 64px; }
+  h1 { color: var(--marka); font-size: 1.8rem; line-height: 1.25; margin: 8px 0 4px; }
+  h2 { color: var(--marka); font-size: 1.2rem; margin: 32px 0 8px; }
+  p, li { margin: 6px 0; }
+  .ust { color: var(--ikincil); font-size: .95rem; }
+  .ust a, a { color: var(--marka); }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 8px 0; }
+  th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--cizgi); }
+  th { color: var(--ikincil); font-weight: 600; }
+  code { font-size: .85em; background: var(--cizgi); padding: 1px 4px; border-radius: 4px; word-break: break-word; }
+  footer { margin-top: 40px; color: var(--ikincil); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+<p class="ust"><a href="gizlilik-en.html" lang="en">English</a> · <a href="kosullar-tr.html">Kullanım Koşulları</a></p>
+<h1>MuslimGo Gizlilik Politikası</h1>
+<p class="ust">Yürürlük tarihi: 13 Kasım 2026</p>
+
+<h2 id="ozet">1. Özet</h2>
+<ul>
+  <li>Hesap açman gerekmez. Ad, e-posta, telefon ya da şifre istemeyiz.</li>
+  <li>Konum (GPS, Wi-Fi, IP'den konum), kişiler, fotoğraf, mikrofon ve reklam kimliği (IDFA) toplamayız.</li>
+  <li>Reklam SDK'sı ve izleyici yok. Verini satmayız. Seni uygulamalar ve siteler arasında izlemeyiz; bu yüzden izleme izni (ATT) istemeyiz.</li>
+  <li>İlerlemen ve ayarların cihazında durur.</li>
+  <li>Lig ve Arkadaşlar için sunucu bağlantısı (Supabase, Avrupa Birliği) isteğe bağlıdır ve bu politikanın yürürlük tarihinde uygulamaya bağlı değildir. Bağlı değilken sunucuya hiçbir veri gitmez. Bağlı olan bir sürümde bu ekranları açarsan takma adın ve ilerleme yedeğin anonim bir hesapla gider; bu veriyi istediğin an silebilirsin (Bölüm 4).</li>
+  <li>Kimliksiz kullanım istatistiği (PostHog, Avrupa Birliği) yalnız uygulama sürümünde etkinse çalışır. Etkinse varsayılan olarak açıktır; Arkadaşlar → Gizlilik'ten kapatabilirsin (Bölüm 5).</li>
+  <li>Uygulama içi satın alma açık olduğunda ödemeyi Apple işler. Satın almayı doğrulamak için RevenueCat kullanılır (Bölüm 6).</li>
+</ul>
+
+<h2 id="cihaz">2. Cihazında kalan veriler</h2>
+<p>Aşağıdakiler yalnız telefonunda saklanır. Bölüm 4–6'da yazanlar dışında hiçbiri bize ya da başka bir yere gönderilmez:</p>
+<ul>
+  <li>Öğrenme ilerlemen: XP, ders yaptığın günler, tamamlanan dersler, tekrar listesi ve günlük etkinlik özeti.</li>
+  <li>Başlangıçta verdiğin cevaplar: hedef, seviye, günlük süre.</li>
+  <li>Hatırlatma saati, sessiz saatler ve namaz vakitleri için seçtiğin şehir. Vakitler cihazında hesaplanır; konum izni istenmez.</li>
+  <li>Ses, titreşim ve azaltılmış hareket tercihleri; gördüğün kutlamalar.</li>
+  <li>Can, oyun parası, seri dondurma ve çifte XP durumu; harf atölyesi ilerlemesi.</li>
+  <li>Aile planı: yazdığın kişi adları (en çok 6 kişi), ortak hedef ve "bugün kim çalıştı" işaretleri. Bunlar ağa hiç çıkmaz; 56 günden eski işaretler silinir.</li>
+  <li>Teknik kayıtlar: planlanmış bildirimler, abonelik durumunun önbelleği, kimliksiz istatistik ayarın ve kurulum kimliğin, sunucu oturum belirtecin (yalnız Lig ya da Arkadaşlar'ı açtıysan).</li>
+</ul>
+<p>Uygulamayı silince bu veriler de silinir. iPhone yedeklemen açıksa bu veriler Apple'ın cihaz yedeğine (iCloud ya da bilgisayar) dahil olabilir. O yedek Apple'ın ve senin kontrolündedir; biz göremeyiz.</p>
+
+<h2 id="bildirim">3. Bildirimler</h2>
+<p>Hatırlatmaları açarsan iOS bildirim izni istenir. Bildirimler cihazında planlanır ve gösterilir. Sunucudan bildirim (push) göndermeyiz ve bildirim belirteci almayız. Sessiz saatler ve namaz vakitleri de cihazında hesaplanır.</p>
+
+<h2 id="sunucu">4. Lig ve Arkadaşlar: isteğe bağlı anonim hesap (Supabase)</h2>
+<p><strong>Bağlantı durumu:</strong> Bu politikanın yürürlük tarihinde sunucu bağlantısı uygulamaya bağlı değildir. Bu durumda Lig ve Arkadaşlar ekranı sunucunun kapalı olduğunu gösterir, anonim hesap oluşturulmaz ve bu bölümdeki verilerin hiçbiri gönderilmez. Bu bölümün geri kalanı yalnız bağlantının açık olduğu bir sürümde geçerlidir.</p>
+<p>Lig ya da Arkadaşlar ekranını ilk açtığında Supabase'de rastgele bir kimlikle anonim bir hesap oluşturulur. Bu hesapta e-posta, telefon ya da şifre yoktur. Bu ekranları hiç açmazsan sunucuda verin oluşmaz.</p>
+<p>Bu hesapla şu veriler sunucuya gider:</p>
+<ul>
+  <li>Takma adın (2–20 karakter, yalnız sen yazarsan) ve rastgele üretilen arkadaş kodun.</li>
+  <li>İlerleme yedeğin: XP, ders yaptığın günler, tamamlanan ders kimlikleri. Haftalık lig XP'sini ve arkadaş serisini hesaplamak ve cihazındaki ilerlemeyle birleştirmek için kullanılır.</li>
+  <li>Lig üyeliğin: hangi hafta hangi gruptasın ve o haftanın başındaki XP'n.</li>
+  <li>Arkadaşlıkların: iki anonim kimlik ve isteğin durumu (bekliyor ya da kabul).</li>
+  <li>Arkadaş serisini hesaplamak için o günün tarihi gönderilir; bu tarih saklanmaz.</li>
+</ul>
+<p><strong>Kim görür:</strong> Takma adını yalnız arkadaşların, lig grubundakiler ve arkadaşlık isteğinin tarafları görür. Lig grubundakiler o haftaki XP'ni görür. Arkadaşların, ikinizin aynı günlerde ders yaptığı ardışık günlerden hesaplanan ortak seriyi görür. Arkadaş kodunla arama yapan kişi profilini göremez; yalnız isteğin gönderilip gönderilmediğini öğrenir. Herkes yalnız kendi yedeğini görebilir.</p>
+<p><strong>Nerede:</strong> Supabase, Avrupa Birliği bölgesi. Bağlantı sırasında IP adresin teknik olarak Supabase'e ulaşır ve hizmetin güvenlik kayıtlarında tutulabilir.</p>
+<p><strong>Ne kadar süre:</strong> Sen silene kadar.</p>
+<p><strong>Silme:</strong> Arkadaşlar → Gizlilik → "Sunucudaki verimi sil", anonim hesabını ve ona bağlı tüm sunucu verisini (takma ad, arkadaş kodu, yedek, lig üyeliği, arkadaşlıklar) siler. Cihazındaki ilerleme kalır. Uygulamayı bunu yapmadan sildiysen bize arkadaş kodunu ya da takma adını yaz; kaydı sileriz.</p>
+
+<h2 id="istatistik">5. Kimliksiz kullanım istatistiği (PostHog)</h2>
+<p>Lig ve arkadaş özelliklerinin nasıl kullanıldığını anlamak için birkaç işlemin adsız sayımı gönderilir. Bu yalnız uygulama sürümünde PostHog bağlantısı etkinse çalışır; etkin değilse hiçbir olay gönderilmez ve aşağıdaki anahtar görünmez. Etkinse varsayılan olarak açıktır. Arkadaşlar → Gizlilik → "Kimliksiz kullanım istatistiği" anahtarıyla kapatabilirsin. Kapatınca cihazındaki kurulum kimliği silinir ve yeni olay gönderilmez. Yeniden açarsan yeni bir kimlik üretilir.</p>
+<p><strong>Ne gider:</strong></p>
+<ul>
+  <li>Olayın adı ve zamanı. Gönderilen olaylar yalnız şunlardır: lig tablosunun açılması, takma adın kaydedilmesi, arkadaşlık isteğinin gönderilmesi, arkadaşlık isteğinin kabulü.</li>
+  <li>Rastgele bir kurulum kimliği. Hesabınla, cihaz kimliğinle ya da Supabase kimliğinle bağlanmaz.</li>
+  <li>Yalnız şu ayrıntılar: lig grubundaki kişi sayısı ve arkadaşlık isteğinin sonucu. Ders ilerlemen, XP'n ve cevapların gönderilmez.</li>
+</ul>
+<p>Dinî metin, verdiğin cevaplar ve yazdığın metinler gönderilmez. Olaylara IP adresi eklenmez, konum çıkarımı kapalıdır ve kişi profili oluşturulmaz. Bağlantı sırasında IP adresin teknik olarak PostHog'a ulaşır. Otomatik ekran yakalama, oturum kaydı ve dokunma takibi yoktur.</p>
+<p><strong>Nerede:</strong> PostHog'un Avrupa Birliği bulutu (Frankfurt). <strong>Ne kadar süre:</strong> PostHog projesinin saklama süresi boyunca. Olaylar bir kişiye bağlanamadığı için tek tek ayıklanamaz.</p>
+
+<h2 id="satin-alma">6. Satın almalar (Apple ve RevenueCat)</h2>
+<p>Uygulama içi satın almalar (abonelikler ve oyun parası paketleri) açık olduğunda geçerlidir. Bu politikanın yürürlük tarihinde satın almalar uygulamada kapalıdır. Satın almaların kapalı olduğu sürümde RevenueCat hiç başlatılmaz ve ağ isteği yapılmaz.</p>
+<ul>
+  <li>Ödemeyi Apple işler. Kart ve ödeme bilgini biz görmeyiz.</li>
+  <li>Satın almayı doğrulamak ve aboneliğini tanımak için RevenueCat, Inc. (ABD) kullanılır. RevenueCat'e şunlar gider: RevenueCat'in ürettiği anonim kullanıcı kimliği, satın alma geçmişin ve App Store makbuzu, cihaz kimliği (IDFV), App Store ülke kodu, tercih ettiğin diller, uygulama ve SDK sürümü. Bağlantı sırasında IP adresin de RevenueCat'e ulaşır.</li>
+  <li>IDFV, Apple'ın geliştiriciye özel cihaz kimliğidir. Reklam kimliği değildir ve seni izlemek için kullanılmaz. Reklam kimliği (IDFA) toplanmaz.</li>
+  <li>RevenueCat kimliği Supabase hesabınla ya da istatistik kimliğinle bağlanmaz.</li>
+  <li>Satın alma kayıtları Apple'da ve RevenueCat'te kendi gizlilik politikalarına göre tutulur. Aboneliğini App Store ayarlarından yönetir ve iptal edersin.</li>
+</ul>
+
+<h2 id="paylasim">7. Paylaşım</h2>
+<p>Ayarlar'daki "Verini dışa aktar", ilerlemeni ve ayarlarını metin olarak iOS paylaşım menüsüyle açar. Nereye gönderileceğine sen karar verirsin. Bunun dışında verini kimseyle paylaşmayız, satmayız ya da kiralamayız. Yalnız bu politikada adı geçen hizmet sağlayıcılar (Supabase, PostHog, RevenueCat, Apple) hizmeti çalıştırmak için veri işler.</p>
+
+<h2 id="toplanmayan">8. Toplamadıklarımız</h2>
+<p>Ad-soyad (isteğe bağlı takma ad dışında), e-posta, telefon, adres, konum (GPS, Wi-Fi, Bluetooth, IP'den konum), kişiler, fotoğraf ve kamera, mikrofon ve ses kaydı, sağlık verisi, reklam kimliği (IDFA), tarama geçmişi, çökme raporu. Uygulamada reklam, izleyici ve çökme raporlama SDK'sı yoktur.</p>
+
+<h2 id="aktarim">9. Yurt dışına aktarım</h2>
+<p>Supabase ve PostHog verisi Avrupa Birliği'nde işlenir. Satın almalar açıkken RevenueCat verisi Amerika Birleşik Devletleri'nde işlenir. Apple, ödemeyi kendi altyapısında işler.</p>
+
+<h2 id="haklar">10. Hukuki dayanak ve hakların (KVKK ve GDPR)</h2>
+<p>Yedek, lig ve satın alma doğrulaması, istediğin özelliği sunmak için gereklidir. Kimliksiz istatistik ise uygulamayı geliştirmeye yönelik meşru menfaatimize dayanır ve istediğin an kapatabilirsin. Verine erişme, düzeltilmesini ya da silinmesini isteme ve işlenmesine itiraz etme hakların vardır. Cihazındaki veri zaten sende. Sunucudaki veriyi uygulamadan silebilir ya da bize yazabilirsin; e-postayla gelen taleplere en geç 30 gün içinde yanıt veririz. Kimliksiz olaylar bir kişiye bağlanamadığı için kişiye göre çıkarılamaz. Ayrıca bulunduğun ülkenin veri koruma otoritesine başvurabilirsin.</p>
+
+<h2 id="saklama">11. Saklama süreleri</h2>
+<table>
+  <tr><th>Veri</th><th>Süre</th></tr>
+  <tr><td>Cihazındaki veriler</td><td>Uygulamayı silene kadar. Aile işaretleri 56 gün; satın alma aktarım bayrağı 7 gün.</td></tr>
+  <tr><td>Supabase'deki anonim hesap ve verileri</td><td>Sen silene kadar.</td></tr>
+  <tr><td>Kimliksiz olaylar (PostHog)</td><td>PostHog projesinin saklama süresi boyunca. Kurulum kimliği, istatistiği kapatınca cihazdan silinir.</td></tr>
+  <tr><td>Satın alma kayıtları (Apple, RevenueCat)</td><td>Apple'ın ve RevenueCat'in politikalarına göre.</td></tr>
+</table>
+
+<h2 id="cocuklar">12. Çocuklar</h2>
+<p>Ad, e-posta ya da telefon istemediğimiz için çocuklardan bilerek kişisel bilgi toplamayız. Lig ve Arkadaşlar'daki takma ad isteğe bağlıdır. 13 yaşından küçük çocukların bu özellikleri ebeveyn gözetiminde kullanmasını öneririz. Çocuğunun sunucuda verisi olduğunu düşünüyorsan bize yaz; sileriz.</p>
+
+<h2 id="sayfa">13. Bu sayfa</h2>
+<p>Bu sayfa GitHub Pages'ta yayımlanır. Sayfayı açtığında GitHub, kendi politikasına göre teknik bağlantı kayıtları tutabilir.</p>
+
+<h2 id="degisiklik">14. Değişiklikler</h2>
+<p>Uygulamanın veri işleyişi değişirse bu politikayı değişiklikle birlikte güncelleriz ve yürürlük tarihini değiştiririz.</p>
+
+<h2 id="iletisim">15. İletişim</h2>
+<p>Sorular, haklarınla ilgili talepler ve silme istekleri için: <a href="mailto:dogac@teknikaotomasyon.com">dogac@teknikaotomasyon.com</a>. MuslimGo'yu Doğaç Turan geliştirir.</p>
+
+<h2 id="ek">Ek: Veri alanları (teknik adlar)</h2>
+<p>Yukarıdaki maddelerin uygulamadaki karşılıkları:</p>
+<table>
+  <tr><th>Nerede</th><th>Teknik ad</th><th>Ne</th></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1</code></td><td>İlerleme: <code>xp</code>, <code>dersGunleri</code>, <code>tamamlananDersler</code>, <code>bildirimSaati</code></td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.profil</code></td><td>Hedef, seviye, günlük süre, hatırlatma saati, sessiz saatler, şehir, ses/titreşim/hareket, günlük etkinlik, tekrar listesi, görülen kutlamalar</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.ekonomi</code></td><td>Can, oyun parası, seri dondurma, çifte XP, abonelik yetkisi</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.harf-atolyesi</code></td><td>Harf atölyesi ilerlemesi</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.aile</code></td><td>Aile planı kişi adları, ortak hedef, işaretler</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.bildirim</code>, <code>muslimgo.hatirlatma.*</code>, <code>muslimgo.deneme</code></td><td>Planlanmış yerel bildirimler</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.deneme-hatirlatma</code></td><td>Deneme bitmeden hatırlatma ayarı</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.v1.paket-islem-tabani</code></td><td>İşlenmiş para paketi işlemleri (aynı satın alma iki kez yazılmasın)</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.satinalma.yetki.v1</code></td><td>Abonelik durumunun önbelleği</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.satinalma.proxy.v1</code></td><td>Satın alma aktarım bayrağı (7 gün)</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.analitik.v1</code></td><td>İstatistik açık/kapalı, kurulum kimliği, ilk ve son etkin gün</td></tr>
+  <tr><td>Cihaz</td><td><code>muslimgo.oturum.v1</code></td><td>Supabase oturum belirteçleri ve anonim kullanıcı kimliği</td></tr>
+  <tr><td>Supabase</td><td><code>auth.users</code></td><td>Anonim kullanıcı kimliği (e-posta ve telefon yok)</td></tr>
+  <tr><td>Supabase</td><td><code>profil</code></td><td><code>takma_ad</code>, <code>arkadas_kodu</code>, <code>olusturma</code></td></tr>
+  <tr><td>Supabase</td><td><code>ilerleme_yedek</code></td><td><code>xp</code>, <code>ders_gunleri</code>, <code>tamamlanan_dersler</code>, <code>guncelleme</code></td></tr>
+  <tr><td>Supabase</td><td><code>lig_grubu</code>, <code>lig_uyelik</code></td><td><code>hafta</code>, <code>kademe</code>, <code>grup_id</code>, <code>baslangic_xp</code>, <code>katilma</code></td></tr>
+  <tr><td>Supabase</td><td><code>arkadaslik</code></td><td><code>isteyen</code>, <code>alan</code>, <code>durum</code>, <code>olusturma</code></td></tr>
+  <tr><td>Supabase (saklanmaz)</td><td><code>p_bugun</code></td><td>Arkadaş serisi için o günün tarihi</td></tr>
+  <tr><td>PostHog</td><td><code>distinct_id</code>, <code>timestamp</code>, <code>app</code>, <code>$lib</code></td><td>Kurulum kimliği, olay zamanı, uygulama etiketi, gönderen</td></tr>
+  <tr><td>PostHog</td><td><code>$ip</code> (boş), <code>$geoip_disable</code>, <code>$process_person_profile</code> (kapalı)</td><td>IP yok, konum yok, kişi profili yok</td></tr>
+  <tr><td>PostHog</td><td><code>lig_acildi</code>, <code>takma_ad_kaydedildi</code>, <code>arkadas_istegi_gonderildi</code>, <code>arkadas_istegi_kabul</code></td><td>Gönderilen olay adları (yalnız bunlar)</td></tr>
+  <tr><td>PostHog</td><td><code>uye_sayisi</code>, <code>sonuc</code></td><td>Olay ayrıntıları (yalnız bunlar)</td></tr>
+  <tr><td>RevenueCat</td><td><code>$RCAnonymousID</code>, IDFV (<code>X-Apple-Device-Identifier</code>)</td><td>Anonim kullanıcı kimliği, cihaz kimliği</td></tr>
+  <tr><td>RevenueCat</td><td>Satın alma geçmişi, App Store makbuzu, mağaza ülke kodu, tercih edilen diller, uygulama ve SDK sürümü</td><td>Satın almayı doğrulamak</td></tr>
+</table>
+
+<footer>© 2026 MuslimGo · <a href="kosullar-tr.html">Kullanım Koşulları</a> · <a href="gizlilik-en.html" lang="en">Privacy Policy (English)</a></footer>
+</main>
+</body>
+</html>
